@@ -25,10 +25,11 @@ var isLaughing= false;
 
 function preload() {
   backgroundImg = loadImage("./assets/background.gif");
-  backgroundMusic = loadSound("./assets/background_music.mp3");
-  waterSound = loadSound("./assets/cannon_water.mp3");
-  pirateLaughSound = loadSound("./assets/pirate_laugh.mp3");
-  cannonExplosion = loadSound("./assets/cannon_explosion.mp3");
+  //Utilize 'loadSound' para carregar um som
+  backgroundMusic = ???("./assets/background_music.mp3");
+  waterSound = ???("./assets/cannon_water.mp3");
+  pirateLaughSound = ???("./assets/pirate_laugh.mp3");
+  cannonExplosion = ???
   towerImage = loadImage("./assets/tower.png");
   boatSpritedata = loadJSON("assets/boat/boat.json");
   boatSpritesheet = loadImage("assets/boat/boat.png");
@@ -148,7 +149,8 @@ function showCannonBalls(ball, index) {
     ball.display();
     ball.animate();
     if (ball.body.position.x >= width || ball.body.position.y >= height - 50) {
-      waterSound.play()  
+      //Utilize a função 'play' para tocar o som
+      waterSound.???()  
       ball.remove(index);
       
     }
@@ -185,12 +187,8 @@ function showBoats() {
       boats[i].animate();
       var collision = Matter.SAT.collides(this.tower, boats[i].body);
       if (collision.collided && !boats[i].isBroken) {
-          //Adicionar a sinalização isLaughing e a configuração isLaughing para true
-          if(!isLaughing && !pirateLaughSound.isPlaying()){
-            pirateLaughSound.play();
-            isLaughing = true
-          }
-        isGameOver = true;
+        //Defiina como 'true' o estado 'isGameOver'
+        isGameOver = ???;
         gameOver();
       }
     }
@@ -208,7 +206,9 @@ function keyReleased() {
 }
 
 function gameOver() {
-  swal(
+  //sawl é usado para exibir pop-ups de alerta 
+  //Utilize esse código abaixo para adicionar uma mensagem de alerta sobre o fim de jogo
+  ???(
     {
       title: `Fim de Jogo!!!`,
       text: "Obrigada por jogar!!",
@@ -219,7 +219,8 @@ function gameOver() {
     },
     function(isConfirm) {
       if (isConfirm) {
-        location.reload();
+        //Utilize o código 'location.reload();' para reinicar seu jogo
+        //???
       }
     }
   );
